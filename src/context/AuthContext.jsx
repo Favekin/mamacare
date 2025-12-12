@@ -7,7 +7,7 @@ const AuthContext = createContext();
 const AUTH_KEY = "mamacare_auth_token";
 const USER_KEY = "mamacare_user";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+const API_URL = import.meta.env.VITE_API_URL || "https://mamacare-backend-901q.onrender.com/";
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
