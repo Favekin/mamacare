@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
       }
 
       try {
-        const res = await fetch(`${VITE_API_URL}/api/auth/verify`, {
+        const res = await fetch(`${API_URL}api/auth/verify`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -68,7 +68,7 @@ export function AuthProvider({ children }) {
   // SIGNUP: will call backend register then automatically login
   const signup = async ({ email, password }) => {
     try {
-      const res = await fetch(`${VITE_API_URL}/api/auth/register`, {
+      const res = await fetch(`${API_URL}api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -93,7 +93,7 @@ export function AuthProvider({ children }) {
   // LOGIN (email/password)
   const login = async ({ email, password }) => {
     try {
-      const res = await fetch(`${API_URL}/api/auth/login`, {
+      const res = await fetch(`${API_URL}api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -118,7 +118,7 @@ export function AuthProvider({ children }) {
   // GOOGLE SIGN IN
   const googleSignIn = async (idToken) => {
     try {
-      const res = await fetch(`${API_URL}/api/auth/google`, {
+      const res = await fetch(`${API_URL}api/auth/google`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idToken }),
