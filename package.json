@@ -10,7 +10,12 @@
   "scripts": {
     "css-watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "server": "npx vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "tailwind-init": "tailwindcss init -p",
     "dev": "concurrently \"npm run css-watch\" \"npm run server\""
+    
   },
   "dependencies": {
     "confetti": "^2.0.6",
