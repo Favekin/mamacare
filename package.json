@@ -8,14 +8,11 @@
     "vite": "^7.2.2"
   },
   "scripts": {
-    "css-watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "server": "npx vite",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "tailwind-init": "tailwindcss init -p",
-    "dev": "concurrently \"npm run css-watch\" \"npm run server\""
-    
+    "tailwind-init": "tailwindcss init -p"
   },
   "dependencies": {
     "confetti": "^2.0.6",
