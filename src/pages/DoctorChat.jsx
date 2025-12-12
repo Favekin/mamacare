@@ -7,7 +7,7 @@ const initialMessage = {
   sender: 'ai',
 };
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "https://mamacare-backend-901q.onrender.com";
 const TOKEN_KEY = "mamacare_auth_token";
 
 export default function DoctorChat() {
@@ -28,7 +28,7 @@ export default function DoctorChat() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/ai/chat`, {
+      const res = await fetch(`${API_URL}api/ai/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
