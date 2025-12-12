@@ -7,7 +7,7 @@ const AuthContext = createContext();
 const AUTH_KEY = "mamacare_auth_token";
 const USER_KEY = "mamacare_user";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://mamacare-backend-901q.onrender.com/";
+const API_URL = import.meta.env.VITE_API_URL || "https://mamacare-backend-901q.onrender.com";
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
       }
 
       try {
-        const res = await fetch(`${API_URL}/api/auth/verify`, {
+        const res = await fetch(`${VITE_API_URL}/api/auth/verify`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -68,7 +68,7 @@ export function AuthProvider({ children }) {
   // SIGNUP: will call backend register then automatically login
   const signup = async ({ email, password }) => {
     try {
-      const res = await fetch(`${API_URL}/api/auth/register`, {
+      const res = await fetch(`${VITE_API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
