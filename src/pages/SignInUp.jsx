@@ -8,23 +8,21 @@ export default function SignInUp() {
   const { signup, login, googleSignIn } = useContext(AuthContext);
 
   const [isSignIn, setIsSignIn] = useState(true);
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false); // NEW
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
 
   // --- GOOGLE SIGN-IN ---
   useEffect(() => {
     const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
-
     if (!clientId) return;
 
     const initGoogle = () => {
@@ -77,14 +75,16 @@ export default function SignInUp() {
     e.preventDefault();
     setError("");
 
+    // 🔹 FORGOT PASSWORD FLOW
     if (showForgotPassword) {
       if (!email) {
         setError("Please enter your email.");
         return;
       }
 
-      // 🔗 Connect this later to backend
+      // TODO: connect backend endpoint here
       alert(`Password reset link would be sent to ${email}`);
+
       setShowForgotPassword(false);
       return;
     }
@@ -102,8 +102,16 @@ export default function SignInUp() {
       }
       navigate(from, { replace: true });
     } else {
+      if (!confirmPassword) {
+        setError("Please confirm your password.");
+        return;
+      }
       if (password !== confirmPassword) {
         setError("Passwords do not match.");
+        return;
+      }
+      if (password.length < 6) {
+        setError("Password must be at least 6 characters long.");
         return;
       }
       const res = await signup({ email, password });
@@ -153,29 +161,27 @@ export default function SignInUp() {
 
           {/* PASSWORD */}
           {!showForgotPassword && (
-            <>
-              <div>
-                <label className="block mb-1 font-medium">Password</label>
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full p-3 pr-12 rounded-lg border border-white/30 bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                    placeholder="Password"
-                    required
-                  />
+            <div>
+              <label className="block mb-1 font-medium">Password</label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full p-3 pr-12 rounded-lg border border-white/30 bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                  placeholder="Password"
+                  required
+                />
 
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
-                  >
-                    👁️
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
+                >
+                  👁️
+                </button>
               </div>
-            </>
+            </div>
           )}
 
           {/* CONFIRM PASSWORD */}
@@ -195,7 +201,7 @@ export default function SignInUp() {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-purple-500 hover:bg-purple-600 transition font-semibold"
+            className="w-full py-3 rounded-lg bg-purple-500 hover:bg-purple-600 transition font-semibold text-white"
           >
             {showForgotPassword
               ? "Send Reset Link"
@@ -205,7 +211,7 @@ export default function SignInUp() {
           </button>
         </form>
 
-        {/* FORGOT PASSWORD */}
+        {/* FORGOT PASSWORD LINK */}
         {isSignIn && !showForgotPassword && (
           <p className="mt-3 text-center text-sm">
             <button
@@ -214,7 +220,7 @@ export default function SignInUp() {
                 setPassword("");
                 setError("");
               }}
-              className="text-white/80 hover:text-white underline"
+              className="underline text-white/80 hover:text-white"
             >
               Forgot password?
             </button>
@@ -235,6 +241,14 @@ export default function SignInUp() {
             </button>
           </p>
         )}
+
+        <div className="flex items-center my-6">
+          <hr className="flex-grow border-white/30" />
+          <span className="px-3 text-white/70 text-sm">OR</span>
+          <hr className="flex-grow border-white/30" />
+        </div>
+
+        <div id="googleSignInDiv" className="flex justify-center"></div>
       </motion.div>
     </div>
   );
