@@ -65,10 +65,7 @@ By prioritizing these nutrition essentials, ensuring proper supplementation, and
     content: ( <> <p className="mb-4">Sleep training—the process of helping a baby or toddler learn to fall asleep and fall back asleep independently—is one of the most debated topics in modern parenting. Sorting through the advice can be challenging, but understanding the research and separating common myths from facts can help you choose the right path for your family.
  </p>
         <h4 className="text-xl font-semibold text-secondary mb-2">Key Myths Debunked </h4>
-        <p className="mb-4">😴 Sleep Training: Myths and Facts
-Sleep training—the process of helping a baby or toddler learn to fall asleep and fall back asleep independently—is one of the most debated topics in modern parenting. Sorting through the advice can be challenging, but understanding the research and separating common myths from facts can help you choose the right path for your family.
-________________________________________
-Key Myths Debunked
+        <p className="mb-4">
 1. Myth: Sleep Training Means "Cry It Out" CIO
 •	Fact: CIO is just one method, and often the most controversial one. Sleep training is an umbrella term that includes a variety of approaches, many of which are much gentler and involve parental presence.
 o	Gentle/Gradual Methods like the Fading or Pick-Up/Put-Down methods aim to slowly reduce parental intervention while the child is learning to self-soothe.
@@ -106,7 +103,42 @@ o	However, other studies, including long-term follow-ups up to 5 years, have fou
     image: article4,
     title: "Postpartum Mental Wellness: Recognizing the Signs",
     
-    content: <p>Full content on postpartum mental wellness goes here...</p>,
+    content: ( <> <p className="mb-4">The postpartum period is a time of intense physical and emotional recovery. While the joy of a new baby is immense, many parents experience a range of mental health challenges. Recognizing the signs of these conditions is the critical first step toward seeking help and achieving full recovery.
+ </p>
+        <h4 className="text-xl font-semibold text-secondary mb-2">Differentiating "Baby Blues" from Clinical Depression </h4>
+        <p className="mb-4">A crucial distinction must be made between the very common, transient Baby Blues and the more serious Postpartum Depression (PPD).
+The Baby Blues affect up to 80% of new mothers and are caused by the rapid drop in pregnancy hormones immediately after birth, coupled with sleep deprivation. Symptoms are mild and may include sadness, mood swings, irritability, and crying spells. Critically, these symptoms usually begin two to four days after delivery and resolve on their own within two weeks.
+Postpartum Depression (PPD) is a serious medical condition that requires professional treatment. If the symptoms of sadness, despair, or irritability last longer than two weeks or begin to interfere significantly with daily life, they point toward PPD. Key indicators include:
+•	A persistent, profound feeling of sadness, emptiness, or hopelessness.
+•	A loss of interest or pleasure in activities you normally enjoy (including bonding with the baby).
+•	Intense feelings of guilt, shame, or worthlessness.
+•	Difficulty concentrating, making decisions, or remembering details.
+
+
+ </p>
+        <h4 className="text-xl font-semibold text-secondary mb-2">Recognizing the Signs of Postpartum Anxiety and Other Mood Disorders </h4>
+        <p className="mb-4"> While depression is often discussed, anxiety and related disorders are equally common in the postpartum period and often co-occur with PPD.
+Postpartum Anxiety (PPA) is characterized by overwhelming and debilitating worry. This is more than typical new-parent concern; it manifests as:
+•	Constant, intrusive worry, often focused on the baby's health or safety.
+•	Physical restlessness, tension, and feeling perpetually "on edge" or keyed up.
+•	Difficulty relaxing or falling asleep due to racing thoughts.
+•	Panic attacks, which involve sudden episodes of intense fear accompanied by physical symptoms like a racing heart, chest pain, and shortness of breath.
+Postpartum Obsessive-Compulsive Disorder (POCD) involves recurrent, unwanted, and highly disturbing thoughts (obsessions) that often focus on accidental or intentional harm coming to the baby. The parent is deeply horrified by these thoughts and uses repetitive behaviors (compulsions) like checking or cleaning to try and neutralize the anxiety.
+
+</p>
+        <h4 className="text-xl font-semibold text-secondary mb-2">Identifying Warning Signs for Immediate Intervention </h4>
+        <p>While most postpartum mood disorders are highly treatable, two specific scenarios require urgent professional intervention: severe PPD and Postpartum Psychosis.
+Severe PPD Indicators: Any parent experiencing recurring thoughts of self-harm or suicide must seek immediate medical help. These thoughts signify an emergency that cannot wait for a regular doctor's appointment.
+Postpartum Psychosis (PPP): This is the rarest and most severe condition, affecting about 1 in 1,000 new mothers, and is a medical emergency. Onset is often sudden, typically within the first week after birth. Signs include:
+•	Hallucinations (seeing or hearing things that are not there).
+•	Delusions (false, fixed beliefs that are out of touch with reality).
+•	Extreme confusion, disorientation, or a rapid cycling of moods.
+•	Any thoughts or actions suggesting an intent to harm the baby or oneself.
+If a parent exhibits any signs of losing touch with reality, professional help should be sought immediately. Postpartum mental health issues are treatable, and timely recognition of these signs is the essential first step toward full recovery and enjoying parenthood.
+
+ </p>  </> )
+
+,
   },
   {
     id: 5,
