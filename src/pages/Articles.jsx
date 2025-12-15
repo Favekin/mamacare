@@ -30,15 +30,15 @@ const articles = [
     image: article2,
     title: "Nutrition Essentials",
 
-    content: ( <p className="mb-4">Pregnancy is a transformative journey, and proper nutrition is the cornerstone of a healthy experience for both the mother and the developing baby. Eating a balanced diet ensures you meet your increased demands for energy and vital nutrients, supporting optimal fetal growth and your own well-being. </p>
+    content: ( <> <p className="mb-4">Pregnancy is a transformative journey, and proper nutrition is the cornerstone of a healthy experience for both the mother and the developing baby. Eating a balanced diet ensures you meet your increased demands for energy and vital nutrients, supporting optimal fetal growth and your own well-being. </p>
         <h4 className="text-xl font-semibold text-secondary mb-2">1. The Power of Prenatal Vitamins and Key Nutrients </h4>
         <p className="mb-4">Even with a perfect diet, it can be challenging to meet all the increased nutritional needs. A high-quality prenatal vitamin, taken daily, is often recommended by healthcare providers to fill these gaps.
-•	Folic Acid (Folate): This is perhaps the most critical nutrient, especially in the early stages. It helps prevent serious birth defects of the brain and spinal cord (neural tube defects). Good sources include fortified cereals, dark leafy greens (spinach), beans, peas, and citrus fruits. The recommended intake is about $600 \text{ mcg}$.
-•	Iron: Your body needs more iron to make extra blood to supply oxygen to the fetus. This helps prevent iron-deficiency anemia in the mother. Choose lean red meat, poultry, fish, iron-fortified cereals, beans, and lentils. The recommended intake is $27 \text{ mg}$ daily.
+•	Folic Acid : This is perhaps the most critical nutrient, especially in the early stages. It helps prevent serious birth defects of the brain and spinal cord. Good sources include fortified cereals, dark leafy greens , beans, peas, and citrus fruits.
+•	Iron: Your body needs more iron to make extra blood to supply oxygen to the fetus. This helps prevent iron-deficiency anemia in the mother. Choose lean red meat, poultry, fish, iron-fortified cereals, beans, and lentils. 
 •	Calcium and Vitamin D: Calcium builds strong bones and teeth for the baby, and Vitamin D helps the body absorb that calcium. Consume milk, yogurt, hard cheese, and calcium-fortified products. Fatty fish and fortified milk are good sources of Vitamin D.
 •	Protein: Essential for the growth of fetal tissue, including the brain. Ensure you get enough from lean meat, poultry, fish, eggs, beans, peas, nuts, seeds, and dairy.
 •	Iodine: Crucial for the baby's neurocognitive development and the mother's thyroid function. Look for iodized salt, seafood, dairy, and eggs.
-•	DHA (Omega-3 Fatty Acid): This healthy fat supports the healthy development of the baby's brain and eyes. It is often consumed through supplements or low-mercury fatty fish like salmon.
+•	Omega-3 Fatty Acid: This healthy fat supports the healthy development of the baby's brain and eyes. It is often consumed through supplements or low-mercury fatty fish like salmon.
  </p>
         <h4 className="text-xl font-semibold text-secondary mb-2">2. Caloric and Weight Management </h4>
         <p className="mb-4"> Forget the old adage of "eating for two." The need for additional energy gradually increases, focusing on nutrient-dense foods:
@@ -48,13 +48,13 @@ const articles = [
 Maintaining an appropriate, gradual weight gain is essential for a healthy pregnancy and should be discussed with your healthcare provider.
 </p>
         <h4 className="text-xl font-semibold text-secondary mb-2">3. Food Safety: What to Avoid</h4>
-        <p>Certain foods can pose a risk of foodborne illnesses (like Listeria), which can be harmful during pregnancy. Be vigilant about food safety:
-•	Avoid: Unpasteurized dairy and soft cheeses (unless pasteurized), raw or undercooked meat and eggs, high-mercury fish (shark, swordfish), and raw sprouts.
+        <p>Certain foods can pose a risk of foodborne illnesses, which can be harmful during pregnancy. Be vigilant about food safety:
+•	Avoid: Unpasteurized dairy and soft cheeses unless pasteurized, raw or undercooked meat and eggs, high-mercury fish, and raw sprouts.
 •	Limit: Deli/lunch meats and hot dogs unless heated until steaming hot.
-•	Restrict: Caffeine to less than $200 \text{ mg}$ per day (consult your doctor).
+•	Restrict: Totally reduce caffeine intake.
 •	Zero Tolerance: Alcohol should be avoided entirely.
 By prioritizing these nutrition essentials, ensuring proper supplementation, and adhering to basic food safety guidelines, you are giving your baby the best possible start and supporting a strong, healthy pregnancy for yourself.
- </p>   ),
+ </p>  </> ),
  
   },
   {
