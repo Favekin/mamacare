@@ -30,7 +30,7 @@ const articles = [
     image: article2,
     title: "Nutrition Essentials",
 
-    content: <p className="mb-4">Pregnancy is a transformative journey, and proper nutrition is the cornerstone of a healthy experience for both the mother and the developing baby. Eating a balanced diet ensures you meet your increased demands for energy and vital nutrients, supporting optimal fetal growth and your own well-being. </p>
+    content: ( <> <p className="mb-4">Pregnancy is a transformative journey, and proper nutrition is the cornerstone of a healthy experience for both the mother and the developing baby. Eating a balanced diet ensures you meet your increased demands for energy and vital nutrients, supporting optimal fetal growth and your own well-being. </p>
         <h4 className="text-xl font-semibold text-secondary mb-2">1. The Power of Prenatal Vitamins and Key Nutrients </h4>
         <p className="mb-4">Even with a perfect diet, it can be challenging to meet all the increased nutritional needs. A high-quality prenatal vitamin, taken daily, is often recommended by healthcare providers to fill these gaps.
 •	Folic Acid (Folate): This is perhaps the most critical nutrient, especially in the early stages. It helps prevent serious birth defects of the brain and spinal cord (neural tube defects). Good sources include fortified cereals, dark leafy greens (spinach), beans, peas, and citrus fruits. The recommended intake is about $600 \text{ mcg}$.
@@ -54,9 +54,8 @@ Maintaining an appropriate, gradual weight gain is essential for a healthy pregn
 •	Restrict: Caffeine to less than $200 \text{ mg}$ per day (consult your doctor).
 •	Zero Tolerance: Alcohol should be avoided entirely.
 By prioritizing these nutrition essentials, ensuring proper supplementation, and adhering to basic food safety guidelines, you are giving your baby the best possible start and supporting a strong, healthy pregnancy for yourself.
- </p>
+ </p>  </>  ),
 
-,
   },
   {
     id: 3,
