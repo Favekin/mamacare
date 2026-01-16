@@ -17,30 +17,32 @@ export default function Navbar() {
 
   const username = user?.email?.split("@")[0];
 
-  const linkClass =
-    "block px-3 py-2 rounded-md text-sm font-medium transition hover:text-secondary";
+  const navLinkBase =
+    "relative px-4 py-2 text-base font-medium transition-all duration-200";
 
   return (
-    <nav className="sticky top-0 z-50 bg-primary text-white shadow-md">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-primary text-white shadow-lg">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-bold tracking-tight hover:opacity-90"
+            className="text-3xl font-extrabold tracking-tight hover:opacity-90"
           >
             Mamacare
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.to}
                 className={({ isActive }) =>
-                  `${linkClass} ${
-                    isActive ? "text-secondary font-semibold" : ""
+                  `${navLinkBase} ${
+                    isActive
+                      ? "text-secondary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-secondary"
+                      : "hover:text-secondary"
                   }`
                 }
               >
@@ -49,17 +51,20 @@ export default function Navbar() {
             ))}
 
             {!isAuthenticated ? (
-              <NavLink to="/auth" className={linkClass}>
+              <NavLink
+                to="/auth"
+                className="rounded-lg border border-white/30 px-5 py-2 text-base font-semibold transition hover:bg-white hover:text-primary"
+              >
                 Account
               </NavLink>
             ) : (
               <>
-                <span className="text-sm opacity-90">
-                  Hi, {username}
+                <span className="text-base opacity-90">
+                  Welcome, <span className="font-semibold">{username}</span>
                 </span>
                 <button
                   onClick={logout}
-                  className="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-primary transition hover:opacity-90"
+                  className="rounded-lg bg-white px-5 py-2 text-base font-semibold text-primary transition hover:opacity-90"
                 >
                   Logout
                 </button>
@@ -69,11 +74,11 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden"
+            className="md:hidden rounded-md p-2 hover:bg-white/10"
             aria-label="Toggle menu"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
       </div>
@@ -81,13 +86,13 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-primary border-t border-white/10">
-          <div className="space-y-1 px-4 py-3">
+          <div className="space-y-3 px-6 py-5">
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.to}
                 onClick={() => setIsOpen(false)}
-                className={linkClass}
+                className="block text-lg font-medium transition hover:text-secondary"
               >
                 {item.name}
               </NavLink>
@@ -97,21 +102,21 @@ export default function Navbar() {
               <NavLink
                 to="/auth"
                 onClick={() => setIsOpen(false)}
-                className={linkClass}
+                className="block rounded-lg border border-white/30 px-4 py-3 text-center text-lg font-semibold"
               >
                 Account
               </NavLink>
             ) : (
               <>
-                <p className="px-3 py-2 text-sm opacity-80">
-                  Hi, {username}
+                <p className="text-base opacity-80">
+                  Signed in as <span className="font-semibold">{username}</span>
                 </p>
                 <button
                   onClick={() => {
                     logout();
                     setIsOpen(false);
                   }}
-                  className="w-full rounded-md bg-white px-3 py-2 text-sm font-medium text-primary"
+                  className="w-full rounded-lg bg-white px-4 py-3 text-lg font-semibold text-primary"
                 >
                   Logout
                 </button>
